@@ -1,1 +1,11 @@
-{}
+{
+  "tasks": {
+    "add": "deno run --allow-read --allow-write src/add.ts",
+    "fetch": "deno run --allow-read --allow-write --allow-net src/fetch.ts"
+  },
+  "imports": {
+    "@mikaelporttila/rss": "jsr:@mikaelporttila/rss@^1.1.3",
+    "@std/fs": "jsr:@std/fs@^1.0.23",
+    "@std/path": "jsr:@std/path@^1.1.4"
+  }
+}
