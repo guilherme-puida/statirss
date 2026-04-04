@@ -91,8 +91,8 @@ function renderFeedNav(
     .join("");
 
   return `
-    <section class="feeds">
-      <h2>Feeds</h2>
+    <details class="feeds" open>
+      <summary>Feeds</summary>
       <ul>
         <li><a${allEntriesCurrent} href="/">All entries</a> <span>${
     feeds.reduce((sum, feed) => sum + feed.items.length, 0)
@@ -100,7 +100,7 @@ function renderFeedNav(
         ${items}
       </ul>
       <p><small>${formatDate(renderedAt.toISOString())}</small></p>
-    </section>
+    </details>
   `;
 }
 
