@@ -15,6 +15,11 @@ interface FeedWithItems {
   items: FeedItem[];
 }
 
+interface EntryGroup {
+  label: string;
+  items: FeedItem[];
+}
+
 function formatDate(value: string): string {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) {
@@ -46,6 +51,82 @@ function feedTitle(feed: FeedWithItems): string {
   return feed.meta.title || feed.meta.url;
 }
 
+function startOfUtcDay(date: Date): number {
+  return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+}
+
+function startOfUtcWeek(date: Date): number {
+  const dayOffset = date.getUTCDay();
+  return Date.UTC(
+    date.getUTCFullYear(),
+    date.getUTCMonth(),
+    date.getUTCDate() - dayOffset,
+  );
+}
+
+function startOfUtcMonth(date: Date): number {
+  return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1);
+}
+
+function groupItems(items: FeedItem[], renderedAt: Date): EntryGroup[] {
+  const groups = [
+    { label: "Today", items: [] as FeedItem[] },
+    { label: "This week", items: [] as FeedItem[] },
+    { label: "This month", items: [] as FeedItem[] },
+  ];
+  const yearlyGroups = new Map<number, FeedItem[]>();
+  const undated: FeedItem[] = [];
+
+  const todayStart = startOfUtcDay(renderedAt);
+  const weekStart = startOfUtcWeek(renderedAt);
+  const monthStart = startOfUtcMonth(renderedAt);
+
+  for (const item of items) {
+    const timestamp = dateValue(item.pubDate);
+
+    if (!timestamp) {
+      undated.push(item);
+      continue;
+    }
+
+    if (timestamp >= todayStart) {
+      groups[0].items.push(item);
+      continue;
+    }
+
+    if (timestamp >= weekStart) {
+      groups[1].items.push(item);
+      continue;
+    }
+
+    if (timestamp >= monthStart) {
+      groups[2].items.push(item);
+      continue;
+    }
+
+    const year = new Date(timestamp).getUTCFullYear();
+    const yearItems = yearlyGroups.get(year) || [];
+    yearItems.push(item);
+    yearlyGroups.set(year, yearItems);
+  }
+
+  const renderedGroups = groups.filter((group) => group.items.length > 0);
+  const sortedYears = [...yearlyGroups.keys()].sort((a, b) => b - a);
+
+  for (const year of sortedYears) {
+    renderedGroups.push({
+      label: String(year),
+      items: yearlyGroups.get(year)!,
+    });
+  }
+
+  if (undated.length > 0) {
+    renderedGroups.push({ label: "Undated", items: undated });
+  }
+
+  return renderedGroups;
+}
+
 function renderEntry(item: FeedItem, feedPath?: string): string {
   const title = escape(item.title || "untitled");
   const feedName = item.feedTitle ? escape(item.feedTitle) : "Unknown feed";
@@ -63,7 +144,7 @@ function renderEntry(item: FeedItem, feedPath?: string): string {
 
   return `
     <article class="entry">
-      <h2 class="entry-title">${itemTitle}</h2>
+      <h3 class="entry-title">${itemTitle}</h3>
       <p class="meta">
         <time class="meta-item" datetime="${escape(item.pubDate)}">${published}</time>
         ${updated}
@@ -71,6 +152,25 @@ function renderEntry(item: FeedItem, feedPath?: string): string {
       </p>
     </article>
   `;
+}
+
+function renderEntryGroups(
+  items: FeedItem[],
+  renderedAt: Date,
+  feedPathForItem?: (item: FeedItem) => string | undefined,
+): string {
+  return groupItems(items, renderedAt)
+    .map((group) => `
+      <section class="entry-group">
+        <h2 class="entry-group-heading">${escape(group.label)}</h2>
+        ${
+      group.items
+        .map((item) => renderEntry(item, feedPathForItem?.(item)))
+        .join("")
+    }
+      </section>
+    `)
+    .join("");
 }
 
 function renderFeedNav(
@@ -200,17 +300,16 @@ async function writeSite(feeds: FeedWithItems[]) {
   );
 
   const renderedAt = new Date();
+  const feedPathByUrl = new Map(
+    feeds.map((feed) => [feed.meta.url, `feeds/${feed.id}.html`]),
+  );
 
   const indexContent = allEntries.length
-    ? allEntries
-      .map((item) => {
-        const feed = feeds.find((candidate) =>
-          candidate.meta.url === item.feedUrl
-        );
-        const path = feed ? `feeds/${feed.id}.html` : undefined;
-        return renderEntry(item, path);
-      })
-      .join("")
+    ? renderEntryGroups(
+      allEntries,
+      renderedAt,
+      (item) => item.feedUrl ? feedPathByUrl.get(item.feedUrl) : undefined,
+    )
     : `<p class="empty">No feed entries yet. Run the fetch step first.</p>`;
 
   const indexHtml = renderPage({
@@ -225,7 +324,7 @@ async function writeSite(feeds: FeedWithItems[]) {
 
   for (const feed of feeds) {
     const content = feed.items.length
-      ? feed.items.map((item) => renderEntry(item)).join("")
+      ? renderEntryGroups(feed.items, renderedAt)
       : `<p class="empty">This feed has no stored entries yet.</p>`;
 
     const html = renderPage({

@@ -58,6 +58,30 @@ h1 {
   margin-top: 0;
 }
 
+.entry-group + .entry-group {
+  margin-top: 1.15rem;
+}
+
+.entry-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5f4f3e;
+}
+
+.entry-group-heading::after {
+  content: "";
+  flex: 1;
+  min-width: 1.5rem;
+  border-top: 1px solid rgba(99, 62, 31, 0.22);
+}
+
 .feeds summary {
   font-weight: 700;
 }
