@@ -1,0 +1,34 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "34 0/6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@ff4860f9d7236f320afa0f82b7e6457384805d05 # 2.0.4
+
+      - name: Build and Deploy
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: ./deploy.sh
+
+      - name: Commit and Push
+        run: |
+          git config user.name 'CI Automation'
+          git config user.email 'noreply@puida.xyz'
+          git commit feeds/ --message 'Automatic update [skip ci]'
+          git push origin main
