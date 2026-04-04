@@ -1,6 +1,7 @@
 import { join } from "@std/path";
 
 export const FEEDS_DIR = "feeds";
+export const DIST_DIR = "dist";
 
 export async function hash(text: string): Promise<string> {
   const data = new TextEncoder().encode(text);

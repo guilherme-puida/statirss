@@ -1,5 +1,5 @@
 import { ensureDir } from "@std/fs";
-import { getFeedDir, getMetaPath, type FeedMeta } from "./utils.ts";
+import { type FeedMeta, getFeedDir, getMetaPath } from "./utils.ts";
 
 async function main() {
   const url = Deno.args[0];
@@ -19,5 +19,5 @@ async function main() {
 }
 
 if (import.meta.main) {
-  await main()
+  await main();
 }
