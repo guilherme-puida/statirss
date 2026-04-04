@@ -19,12 +19,12 @@ a {
 .shell {
   width: min(72rem, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2rem 0 4rem;
+  padding: 1.5rem 0 3rem;
 }
 
 header {
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.75rem;
   border: 1px solid rgba(99, 62, 31, 0.2);
   background: rgba(255, 251, 244, 0.88);
   backdrop-filter: blur(0.35rem);
@@ -43,13 +43,13 @@ h1 {
 
 .layout {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
   grid-template-columns: minmax(0, 1fr);
 }
 
 .feeds,
 .entries {
-  padding: 1.5rem;
+  padding: 1.1rem 1.25rem;
   border: 1px solid rgba(99, 62, 31, 0.2);
   background: rgba(255, 251, 244, 0.92);
 }
@@ -73,7 +73,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.42rem 0;
   border-top: 1px solid rgba(99, 62, 31, 0.12);
 }
 
@@ -87,29 +87,38 @@ h1 {
 }
 
 .entry + .entry {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 0.95rem;
+  padding-top: 0.95rem;
   border-top: 1px solid rgba(99, 62, 31, 0.12);
 }
 
-.entry h2 {
-  margin-bottom: 0.35rem;
+.entry-title {
+  margin: 0 0 0.18rem;
+  font-size: clamp(1rem, 0.94rem + 0.28vw, 1.35rem);
+  line-height: 1.15;
 }
 
 .meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
   margin: 0;
   color: #6a5949;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.meta-item {
+  white-space: nowrap;
 }
 
 .feed-pill {
   display: inline-block;
-  padding: 0.1rem 0.5rem;
+  padding: 0.05rem 0.35rem;
   border: 1px solid rgba(99, 62, 31, 0.2);
   text-decoration: none;
+  line-height: 1.15;
 }
 
 .empty {
