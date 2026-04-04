@@ -75,14 +75,29 @@ async function main() {
     return;
   }
 
+  const feeds: { meta: FeedMeta; feedDir: string }[] = [];
+
   for await (const entry of Deno.readDir(FEEDS_DIR)) {
     if (!entry.isDirectory) continue;
     const feedDir = join(FEEDS_DIR, entry.name);
     const metaPath = getMetaPath(feedDir);
     const metaText = await Deno.readTextFile(metaPath);
     const meta = JSON.parse(metaText) as FeedMeta;
-    await fetchFeed(meta, feedDir);
+    feeds.push({ meta, feedDir });
   }
+
+  const queue = feeds[Symbol.iterator]();
+  const worker = async () => {
+    for (const { meta, feedDir } of queue) {
+      await fetchFeed(meta, feedDir);
+    }
+  };
+
+  const concurrency = 5;
+
+  await Promise.all(
+    Array.from({ length: Math.min(concurrency, feeds.length) }, worker),
+  );
 }
 
 if (import.meta.main) {

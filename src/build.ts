@@ -73,7 +73,11 @@ function renderEntry(item: FeedItem, feedPath?: string): string {
   `;
 }
 
-function renderFeedNav(feeds: FeedWithItems[], currentFeedId?: string, renderedAt: Date): string {
+function renderFeedNav(
+  feeds: FeedWithItems[],
+  currentFeedId?: string,
+  renderedAt: Date,
+): string {
   const allEntriesCurrent = currentFeedId ? "" : ' aria-current="page"';
 
   const items = feeds
