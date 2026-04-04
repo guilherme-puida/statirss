@@ -252,6 +252,7 @@ async function readFeeds(): Promise<FeedWithItems[]> {
 
   for await (const entry of Deno.readDir(FEEDS_DIR)) {
     if (!entry.isDirectory) continue;
+    console.log(`building ${entry.name}`);
 
     const feedDir = join(FEEDS_DIR, entry.name);
     const meta = JSON.parse(
