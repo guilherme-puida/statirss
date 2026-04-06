@@ -1,0 +1,9 @@
+{
+  "guid": "tag:research.swtch.com,2012:research.swtch.com/acme",
+  "title": "A Tour of Acme",
+  "url": "https://research.swtch.com/acme",
+  "pubDate": "2012-09-17T15:00:00.000Z",
+  "updateDate": "2012-09-17T15:00:00.000Z",
+  "feedTitle": "research!rsc",
+  "feedUrl": "https://research.swtch.com/feed.atom"
+}
