@@ -30,6 +30,7 @@ jobs:
           deno task add "$FEED_URL"
           git add feeds/
           git commit --message "Add $FEED_URL"
+          git pull --rebase origin main
           git push origin main
 
   build-and-deploy:

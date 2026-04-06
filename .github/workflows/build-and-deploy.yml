@@ -33,4 +33,5 @@ jobs:
           git config user.email 'noreply@puida.xyz'
           git add feeds/
           git commit --message 'Automatic update [skip ci]'
+          git pull --rebase origin main
           git push origin main
