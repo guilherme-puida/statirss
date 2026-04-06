@@ -34,4 +34,6 @@ jobs:
 
   build-and-deploy:
     needs: [add-feed]
+    permissions:
+      contents: write
     uses: ./.github/workflows/build-and-deploy.yml
