@@ -36,4 +36,5 @@ jobs:
     needs: [add-feed]
     permissions:
       contents: write
+    secrets: inherit
     uses: ./.github/workflows/build-and-deploy.yml
