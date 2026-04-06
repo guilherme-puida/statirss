@@ -1,0 +1,9 @@
+{
+  "guid": "tag:til.simonwillison.net,2020-04-30:cloudflare_rate-limiting.md",
+  "title": "Rate limiting by IP using Cloudflare's rate limiting rules",
+  "url": "https://til.simonwillison.net/cloudflare/rate-limiting",
+  "pubDate": "2025-07-03T21:06:22.000Z",
+  "updateDate": "2025-07-03T21:06:22.000Z",
+  "feedTitle": "Simon Willison TIL",
+  "feedUrl": "https://til.simonwillison.net/tils/feed.atom"
+}

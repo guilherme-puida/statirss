@@ -1,0 +1,9 @@
+{
+  "guid": "tag:til.simonwillison.net,2020-04-30:python_uv-tests.md",
+  "title": "Testing different Python versions with uv with-editable and uv-test",
+  "url": "https://til.simonwillison.net/python/uv-tests",
+  "pubDate": "2025-10-09T02:47:48.000Z",
+  "updateDate": "2025-10-09T02:47:48.000Z",
+  "feedTitle": "Simon Willison TIL",
+  "feedUrl": "https://til.simonwillison.net/tils/feed.atom"
+}

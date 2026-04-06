@@ -1,0 +1,9 @@
+{
+  "guid": "tag:til.simonwillison.net,2020-04-30:llms_codex-spark-gpt-oss.md",
+  "title": "Using Codex CLI with gpt-oss:120b on an NVIDIA DGX Spark via Tailscale",
+  "url": "https://til.simonwillison.net/llms/codex-spark-gpt-oss",
+  "pubDate": "2025-11-07T07:16:55.000Z",
+  "updateDate": "2025-11-07T07:16:55.000Z",
+  "feedTitle": "Simon Willison TIL",
+  "feedUrl": "https://til.simonwillison.net/tils/feed.atom"
+}
