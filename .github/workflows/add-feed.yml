@@ -32,5 +32,6 @@ jobs:
           git commit --message "Add $FEED_URL"
           git push origin main
 
-      - name: Build and Deploy
-        uses: ./.github/workflows/build-and-deploy.yml
+  build-and-deploy:
+    needs: [add-feed]
+    uses: ./.github/workflows/build-and-deploy.yml
