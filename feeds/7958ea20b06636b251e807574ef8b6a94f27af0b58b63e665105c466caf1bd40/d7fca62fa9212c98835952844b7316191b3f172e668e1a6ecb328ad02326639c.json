@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/sysadmin/PrometheusLetsEncryptTLSChecking",
+  "title": "Prometheus, Let's Encrypt, and making sure all our TLS certificates are monitored",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/PrometheusLetsEncryptTLSChecking",
+  "pubDate": "2026-01-06T03:11:03.000Z",
+  "updateDate": "2026-01-06T03:12:04.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}

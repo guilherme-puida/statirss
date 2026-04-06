@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/programming/GoGenericTypeIsPointer",
+  "title": "Forcing a Go generic type to be a pointer type (and some challenges)",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/programming/GoGenericTypeIsPointer",
+  "pubDate": "2026-01-27T04:48:16.000Z",
+  "updateDate": "2026-01-27T04:58:51.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}

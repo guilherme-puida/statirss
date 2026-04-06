@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/linux/TcBufferbloatEarlyExperience",
+  "title": "Early experience with using Linux tc to fight bufferbloat latency",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/linux/TcBufferbloatEarlyExperience",
+  "pubDate": "2026-01-11T03:52:52.000Z",
+  "updateDate": "2026-01-11T03:53:54.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}

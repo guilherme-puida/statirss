@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/linux/EBPFPerPortIPRestrictions",
+  "title": "Restricting IP address access to specific ports in eBPF: a sketch",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/linux/EBPFPerPortIPRestrictions",
+  "pubDate": "2026-03-08T03:04:11.000Z",
+  "updateDate": "2026-03-08T03:05:12.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}

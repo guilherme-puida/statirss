@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/sysadmin/PrometheusBlackboxQueryResponse",
+  "title": "Understanding <code>query_response</code> in Prometheus Blackbox's tcp prober",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/PrometheusBlackboxQueryResponse",
+  "pubDate": "2026-01-24T02:54:48.000Z",
+  "updateDate": "2026-01-24T02:55:50.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}

@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/unix/MmapVsPlainReadThoughts",
+  "title": "Considering mmap() verus plain reads for my recent code",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/unix/MmapVsPlainReadThoughts",
+  "pubDate": "2026-03-26T23:05:54.000Z",
+  "updateDate": "2026-03-26T23:06:37.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}

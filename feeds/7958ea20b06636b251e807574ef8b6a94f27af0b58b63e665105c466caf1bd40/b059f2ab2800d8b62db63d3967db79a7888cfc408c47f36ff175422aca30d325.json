@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/programming/GoTestingSelectQuestion",
+  "title": "A Go question: how do you test <code>select</code> based code?",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/programming/GoTestingSelectQuestion",
+  "pubDate": "2026-01-02T03:24:17.000Z",
+  "updateDate": "2026-01-02T03:25:19.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}
