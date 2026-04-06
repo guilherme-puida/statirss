@@ -12,6 +12,7 @@ async function fetchFeed(meta: FeedMeta, feedDir: string) {
   console.log(`${meta.url}: fetching...`);
   try {
     const headers = new Headers();
+    headers.set("User-Agent", "statirss (+https://github.com/guilherme-puida/statirss)")
     if (meta.etag) {
       headers.set("If-None-Match", meta.etag);
     }
