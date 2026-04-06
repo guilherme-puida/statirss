@@ -7,6 +7,7 @@ on:
   schedule:
     - cron: "34 0/6 * * *"
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   build-and-deploy:
