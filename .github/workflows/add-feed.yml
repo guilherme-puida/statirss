@@ -1,0 +1,33 @@
+name: Add Feed
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Feed URL
+        required: true
+        type: string
+
+jobs:
+  add-feed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@ff4860f9d7236f320afa0f82b7e6457384805d05 # 2.0.4
+
+      - name: Add Feed
+        env:
+          FEED_URL: ${{ inputs.url }}
+        run: |
+          git config user.name 'CI Automation'
+          git config user.email 'noreply@puida.xyz'
+          deno task add "$FEED_URL"
+          git add feeds/
+          git commit --message "Add $FEED_URL"
+          git push origin main
