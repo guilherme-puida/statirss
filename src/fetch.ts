@@ -62,6 +62,8 @@ async function fetchFeed(meta: FeedMeta, feedDir: string) {
 
       await Deno.writeTextFile(itemPath, JSON.stringify(item, null, 2));
     }
+
+    console.log(`${meta.url}: fetched ${feed.entries.length} entries`);
   } catch (error) {
     console.error(`${meta.url}: something went wrong`, error);
   }

@@ -132,7 +132,9 @@ function renderEntry(item: FeedItem, feedPath?: string): string {
   const feedName = item.feedTitle ? escape(item.feedTitle) : "Unknown feed";
   const published = escape(formatDate(item.pubDate));
   const updated = item.updateDate && item.updateDate !== item.pubDate
-    ? `<span class="meta-item">Updated ${escape(formatDate(item.updateDate))}</span>`
+    ? `<span class="meta-item">Updated ${
+      escape(formatDate(item.updateDate))
+    }</span>`
     : "";
 
   const itemTitle = item.url
@@ -146,7 +148,9 @@ function renderEntry(item: FeedItem, feedPath?: string): string {
     <article class="entry">
       <h3 class="entry-title">${itemTitle}</h3>
       <p class="meta">
-        <time class="meta-item" datetime="${escape(item.pubDate)}">${published}</time>
+        <time class="meta-item" datetime="${
+    escape(item.pubDate)
+  }">${published}</time>
         ${updated}
         ${feedLabel}
       </p>
