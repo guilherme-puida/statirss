@@ -1,0 +1,9 @@
+{
+  "guid": "https://mattkeeter.com/blog/2026-04-05-tailcall",
+  "title": "A tail-call interpreter in nightly Rust",
+  "url": "https://mattkeeter.com/blog/2026-04-05-tailcall",
+  "pubDate": "2026-04-05T00:00:00.000Z",
+  "updateDate": "2026-04-05T00:00:00.000Z",
+  "feedTitle": "Matt Keeter",
+  "feedUrl": "https://www.mattkeeter.com/atom.xml"
+}
