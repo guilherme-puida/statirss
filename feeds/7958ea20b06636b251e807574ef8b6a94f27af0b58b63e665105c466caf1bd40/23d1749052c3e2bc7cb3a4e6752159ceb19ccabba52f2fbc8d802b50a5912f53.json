@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/tech/TLSIgnoringMissingClientAuth",
+  "title": "Ignoring missing TLS \"Client Authentication\" usage in practice",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/tech/TLSIgnoringMissingClientAuth",
+  "pubDate": "2026-04-20T03:26:49.000Z",
+  "updateDate": "2026-04-20T03:27:50.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}
