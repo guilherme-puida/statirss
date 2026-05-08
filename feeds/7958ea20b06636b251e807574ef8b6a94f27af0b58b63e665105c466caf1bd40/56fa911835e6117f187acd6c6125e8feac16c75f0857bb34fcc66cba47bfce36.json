@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/unix/BourneShellLoginWithCommand",
+  "title": "Detecting (or not) the use of -l and -c together in Bourne shells",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/unix/BourneShellLoginWithCommand",
+  "pubDate": "2026-05-08T03:31:17.000Z",
+  "updateDate": "2026-05-08T03:32:19.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}
