@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/linux/SystemctlKexecVsKexec",
+  "title": "Some things on '<code>systemctl kexec</code>' as compared to '<code>kexec -e</code>'",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/linux/SystemctlKexecVsKexec",
+  "pubDate": "2026-06-25T02:42:00.000Z",
+  "updateDate": "2026-06-25T02:43:01.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}
