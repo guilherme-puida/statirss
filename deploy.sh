@@ -23,4 +23,7 @@ curl http://sr.puida.xyz \
   --request PUT \
   --header "Authorization: Pages $PASSWORD" \
   --header 'Content-Type: application/x-tar+zstd' \
+  --speed-limit 1024 \
+  --speed-time 30 \
+  --max-time 120 \
   --data-binary @site.tar.zst
