@@ -20,7 +20,7 @@ deno task build
 tar --zstd -cvf site.tar.zst -C dist/ .
 
 curl http://sr.puida.xyz \
-  -X PUT \
-  -H "Authorization: Pages $PASSWORD" \
-  -H 'Content-Type: application/x-tar+zstd' \
+  --request PUT \
+  --header "Authorization: Pages $PASSWORD" \
+  --header 'Content-Type: application/x-tar+zstd' \
   --data-binary @site.tar.zst
