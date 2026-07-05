@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/sysadmin/OpenSSHStdoutIOSize",
+  "title": "What buffer size (OpenSSH) <code>ssh</code> seems to use for streaming output",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OpenSSHStdoutIOSize",
+  "pubDate": "2026-07-04T23:27:08.000Z",
+  "updateDate": "2026-07-04T23:28:10.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}
