@@ -1,0 +1,9 @@
+{
+  "guid": "tag:cspace@cks.mef.org,2009-03-24:/blog/linux/TcLimitServiceBandwidth",
+  "title": "Using Linux <code>tc</code> to limit the outgoing bandwidth of a web server",
+  "url": "https://utcc.utoronto.ca/~cks/space/blog/linux/TcLimitServiceBandwidth",
+  "pubDate": "2026-07-07T03:05:39.000Z",
+  "updateDate": "2026-07-07T03:06:40.000Z",
+  "feedTitle": "Chris's Wiki :: blog",
+  "feedUrl": "https://utcc.utoronto.ca/~cks/space/blog/?atom"
+}
