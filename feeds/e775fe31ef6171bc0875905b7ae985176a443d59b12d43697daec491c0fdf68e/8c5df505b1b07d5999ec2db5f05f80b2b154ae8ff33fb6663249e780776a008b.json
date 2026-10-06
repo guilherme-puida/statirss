@@ -1,0 +1,9 @@
+{
+  "guid": "tag:til.simonwillison.net,2020-04-30:datasette_datasette-parseable-opentelemetry.md",
+  "title": "Using Parseable with Datasette for OpenTelemetry traces",
+  "url": "https://til.simonwillison.net/datasette/datasette-parseable-opentelemetry",
+  "pubDate": "2026-10-06T19:07:31.000Z",
+  "updateDate": "2026-10-06T19:07:31.000Z",
+  "feedTitle": "Simon Willison TIL",
+  "feedUrl": "https://til.simonwillison.net/tils/feed.atom"
+}
